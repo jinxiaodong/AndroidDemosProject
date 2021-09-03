@@ -25,6 +25,16 @@ class CodeView @JvmOverloads constructor(
     AppCompatTextView(context, attrs, defStyleAttr) {
 
 
+    private val codeList = arrayOf(
+        "kotlin",
+        "android",
+        "java",
+        "http",
+        "https",
+        "okhttp",
+        "retrofit",
+        "tcp/ip"
+    )
     private val paint = Paint().apply {
        isAntiAlias = true
        style = Paint.Style.STROKE
@@ -40,17 +50,6 @@ class CodeView @JvmOverloads constructor(
         updateCode()
     }
 
-
-    private val codeList = arrayOf(
-        "kotlin",
-        "android",
-        "java",
-        "http",
-        "https",
-        "okhttp",
-        "retrofit",
-        "tcp/ip"
-    )
 
     fun updateCode() {
         val random = Random().nextInt(codeList.size)

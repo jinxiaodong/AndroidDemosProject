@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="databindingdemo/src/main/res/layout/activity_main.xml" value="0.2765957446808511" />
+        <entry key="kotlindemo/src/main/res/layout/activity_lesson.xml" value="0.20833333333333334" />
+        <entry key="kotlindemo/src/main/res/layout/activity_main.xml" value="0.3005025125628141" />
+        <entry key="kotlindemo/src/main/res/layout/item_lesson.xml" value="0.3640625" />
+        <entry key="kotlindemo/src/main/res/menu/menu_lesson.xml" value="0.39166666666666666" />
       </map>
     </option>
   </component>
