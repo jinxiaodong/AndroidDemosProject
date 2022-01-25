@@ -9,3 +9,4 @@ include ':interceptor'
 
 
 include ':customerview'
+include ':demos'

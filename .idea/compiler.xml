@@ -5,6 +5,7 @@
       <module name="AndroidDemosProject.app" target="1.8" />
       <module name="AndroidDemosProject.customerview" target="1.8" />
       <module name="AndroidDemosProject.databindingdemo" target="1.8" />
+      <module name="AndroidDemosProject.demos" target="1.8" />
       <module name="AndroidDemosProject.kotlindemo" target="1.8" />
       <module name="AndroidDemosProject.lifecycledemo" target="1.8" />
       <module name="AndroidDemosProject.livedatademo" target="1.8" />
