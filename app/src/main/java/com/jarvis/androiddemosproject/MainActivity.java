@@ -34,7 +34,6 @@ public class MainActivity extends Activity {
         MyThread t2 = new MyThread(object);
         t1.start();
         t2.start();
-        Glide.with().load().into()
     }
 
 
