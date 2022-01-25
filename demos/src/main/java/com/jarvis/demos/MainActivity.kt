@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jarvis.demos.calendar.CalendarTestActivity
@@ -63,10 +64,9 @@ class MainActivity : AppCompatActivity() {
 
 
         inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
             fun bindViewHolder(item: String) {
-                textview.text = item
-                textview.setOnClickListener {
+                itemView.textview.text = item
+                itemView.textview.setOnClickListener {
                     onClick(item)
                 }
             }

@@ -3,6 +3,7 @@ package com.jarvis.androiddemosproject;
 import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -34,6 +35,7 @@ public class MainActivity extends Activity {
         MyThread t2 = new MyThread(object);
         t1.start();
         t2.start();
+
     }
 
 
