@@ -1,7 +1,10 @@
 package com.jarvis.kotlindemo.simple
 
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * @author jinxiaodong
@@ -17,6 +20,8 @@ interface API {
 
 val RETROFIT = Retrofit.Builder()
     .baseUrl("https://api.hencoder.com/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     .build()
 
 //

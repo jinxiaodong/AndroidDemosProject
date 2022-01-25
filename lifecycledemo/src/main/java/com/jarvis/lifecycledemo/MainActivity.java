@@ -11,19 +11,21 @@ public class MainActivity extends AppCompatActivity {
     private MyLocationListener myLocationListener;
     private TextView tvHello;
 
+    private static void onLocateSuccess(String location) {
+        //update UI
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //
-//        tvHello = findViewById(R.id.tv_hello);
+        tvHello = findViewById(R.id.tv_hello);
 //        myLocationListener = new MyLocationListener(this, location -> {
 //            //update UI
 //        });
 
-        getLifecycle().addObserver(new MyLocationListener2(this, location -> {
-            //update UI
-        }));
+        getLifecycle().addObserver(new MyLocationListener2(this, MainActivity::onLocateSuccess));
     }
 
     @Override
