@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDemosProject">
         <activity
-            android:name="com.jarvis.aidlserver.com.jarvis.aidlclient.MainActivity"
+            android:name="com.jarvis.aidlclient.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

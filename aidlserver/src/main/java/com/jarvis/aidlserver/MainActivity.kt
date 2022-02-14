@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), App.OnGetClientDataCallback {
             /**
              * 读取assets目录下文件
              */
-            val inputStream = assets.open("large.jpeg")
+            val inputStream = assets.open("server1.jpeg")
 
             /**
              * 将inputStream转换成字节数组
