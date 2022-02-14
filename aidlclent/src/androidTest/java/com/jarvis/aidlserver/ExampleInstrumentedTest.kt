@@ -1,4 +1,4 @@
-package com.jarvis.aidlclient
+package com.jarvis.aidlserver
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

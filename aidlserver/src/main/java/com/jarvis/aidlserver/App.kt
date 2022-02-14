@@ -1,4 +1,4 @@
-package com.jarvis.aidlclient
+package com.jarvis.aidlserver
 
 import android.app.Application
 import android.os.Handler

@@ -4,11 +4,16 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.graphics.BitmapFactory
 import android.os.*
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.jarvis.aidlclient.databinding.ActivityMainBinding
+import com.jarvis.aidlserver.ICallbackInterface
+import com.jarvis.aidlserver.IMyAidlInterface
+import com.jarvis.aidlserver.R
+import com.jarvis.aidlserver.databinding.ActivityMainBinding
+import java.io.FileInputStream
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
@@ -17,16 +22,31 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val callback = object : ICallbackInterface.Stub() {
+        override fun server2client(pfd: ParcelFileDescriptor) {
+
+            val fileDescriptor = pfd.fileDescriptor
+            val fileInputStream = FileInputStream(fileDescriptor)
+            val bytes = fileInputStream.readBytes()
+            if (bytes.isNotEmpty()) {
+                val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                if (bitmap != null) {
+                    binding.iv.setImageBitmap(bitmap)
+                }
+            }
+        }
+    }
     private var serviceConnection = object : ServiceConnection {
 
         override fun onServiceConnected(name: ComponentName?, binder: IBinder?) {
             mStub = IMyAidlInterface.Stub.asInterface(binder)
+            mStub?.registerCallback(callback)
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
             mStub = null
-        }
 
+        }
     }
 
 

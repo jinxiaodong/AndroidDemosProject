@@ -1,4 +1,4 @@
-package com.jarvis.aidlclient
+package com.jarvis.aidlserver
 
 import android.app.Service
 import android.content.Intent
@@ -12,7 +12,7 @@ import java.io.FileInputStream
  */
 class AidlService : Service() {
 
-//    private val callbacks= RemoteCallbackList<String>()
+    private val callbacks = RemoteCallbackList<ICallbackInterface>()
 
     private val mStub: IMyAidlInterface.Stub = object : IMyAidlInterface.Stub() {
 
@@ -32,12 +32,22 @@ class AidlService : Service() {
              */
             val data = fis.readBytes()
 
-            val message = Message().apply {
+            val message = Message.obtain().apply {
                 what = 1
                 obj = data
             }
             App.application.handler.sendMessage(message)
         }
+
+        override fun registerCallback(callback: ICallbackInterface?) {
+
+            callbacks.register(callback)
+        }
+
+        override fun unregisterCallback(callback: ICallbackInterface?) {
+            callbacks.unregister(callback)
+        }
+
 
     }
 
@@ -48,27 +58,25 @@ class AidlService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-//        App.application.setOnSendClientDataCallback(object :App.OnSendClientDataCallback{
-//            override fun onSendClientData(pfd: ParcelFileDescriptor) {
-//                serverToClient(pfd)
-//            }
-//
-//        })
-
+        App.application.setOnSendClientDataCallback(object :App.OnSendClientDataCallback{
+            override fun onSendClientData(pfd: ParcelFileDescriptor) {
+                serverToClient(pfd)
+            }
+        })
     }
 
     private fun serverToClient(pfd: ParcelFileDescriptor) {
-//        val n=callbacks.beginBroadcast()
-//        for(i in 0 until n){
-//            val callback=callbacks.getBroadcastItem(i);
-//            if (callback!=null){
-//                try {
-//                    callback.server2client(pfd)
-//                } catch (e: RemoteException) {
-//                    e.printStackTrace()
-//                }
-//            }
-//        }
-//        callbacks.finishBroadcast()
+        val n=callbacks.beginBroadcast()
+        for(i in 0 until n){
+            val callback=callbacks.getBroadcastItem(i);
+            if (callback!=null){
+                try {
+                    callback.server2client(pfd)
+                } catch (e: RemoteException) {
+                    e.printStackTrace()
+                }
+            }
+        }
+        callbacks.finishBroadcast()
     }
 }

@@ -1,7 +1,7 @@
 // IMyAidlInterface.aidl
 package com.jarvis.aidlserver;
-import com.jarvis.aidlserver.ICallbackInterface;
 
+import com.jarvis.aidlserver.ICallbackInterface;
 // Declare any non-default types here with import statements
 
 interface IMyAidlInterface {
