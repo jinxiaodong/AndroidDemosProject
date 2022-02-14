@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../Library/Android/sdk/platforms/android-30/data/res/layout/screen_simple.xml" value="0.39166666666666666" />
         <entry key="aidlclent/src/main/res/layout/activity_main.xml" value="0.2733271280924479" />
+        <entry key="aidlserver/src/main/res/layout/activity_main.xml" value="0.2838541666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29791666666666666" />
         <entry key="databindingdemo/src/main/res/layout/activity_main.xml" value="0.2765957446808511" />
         <entry key="demos/src/main/res/layout/activity_calendar_test.xml" value="0.29791666666666666" />
