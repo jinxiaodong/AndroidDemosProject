@@ -10,3 +10,5 @@ include ':interceptor'
 
 include ':customerview'
 include ':demos'
+include ':aidlclent'
+include ':aidlserver'
