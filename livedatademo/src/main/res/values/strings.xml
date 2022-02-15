@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LiveDataDemo</string>
+    <string name="label1">11</string>
+    <string name="label2">222</string>
+    <string name="label3">333</string>
+    <string name="label4">444</string>
+    <string name="refresh_lable">refresh</string>
 </resources>
