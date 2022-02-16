@@ -5,6 +5,4 @@
     android:layout_height="60dp"
     android:layout_margin="40dp"
     android:gravity="center">
-
-
 </TextView>
