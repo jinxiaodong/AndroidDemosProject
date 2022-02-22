@@ -1,19 +1,10 @@
 package com.jarvis.androiddemosproject;
 
-import androidx.activity.result.ActivityResultCaller;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
-import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.module.AppGlideModule;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
