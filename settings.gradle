@@ -4,9 +4,6 @@ include ':lifecycledemo'
 include ':livedatademo'
 include ':databindingdemo'
 include ':kotlindemo'
-include ':okhttp3'
-include ':interceptor'
-
 
 include ':customerview'
 include ':demos'

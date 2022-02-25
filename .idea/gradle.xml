@@ -17,11 +17,9 @@
             <option value="$PROJECT_DIR$/customerview" />
             <option value="$PROJECT_DIR$/databindingdemo" />
             <option value="$PROJECT_DIR$/demos" />
-            <option value="$PROJECT_DIR$/interceptor" />
             <option value="$PROJECT_DIR$/kotlindemo" />
             <option value="$PROJECT_DIR$/lifecycledemo" />
             <option value="$PROJECT_DIR$/livedatademo" />
-            <option value="$PROJECT_DIR$/okhttp3" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
