@@ -1,0 +1,93 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk BuildVersion.compileSdkVersion
+
+    defaultConfig {
+        minSdk BuildVersion.minSdkVersion
+        targetSdk BuildVersion.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    api Kotlin.kotlin_stdlib
+    api Kotlin.kotlin_reflect
+    api Kotlin.coroutines
+    api Kotlin.coroutines_android
+    api Androidx.appcompat
+    api Androidx.core_ktx
+    api Androidx.activity_ktx
+    api Androidx.fragment_ktx
+    api Androidx.lifecycle_runtime_ktx
+    api Androidx.lifecycle_common_java8
+    api Androidx.livedata_ktx
+    api Androidx.livedata_unpeek
+    api Androidx.viewmodel_ktx
+    api Androidx.room_ktx
+    api Androidx.room_runtime
+    api Google.material
+
+    api Deps.utils
+    api Deps.lottie
+    api Deps.BRVAH
+    api Deps.smartRefreshLayout_kernel
+    api Deps.smartRefreshLayout_header_classics
+    api Deps.smartRefreshLayout_footer_classics
+    api Deps.koin_core
+    api Deps.koin_android
+    api Deps.koin_android_compat
+    api Deps.koin_test
+
+    api Deps.okhttp
+    api Deps.okhttp_logging
+    api Deps.retrofit
+    api Deps.adapter_rxjava3
+    api Deps.converter_gson
+    api Deps.glide
+    api Deps.glide_transformations
+    api Deps.glide_gpuimage
+    // 基础依赖包，必须要依赖
+    api Deps.immersionbar
+    // kotlin扩展（可选）
+    api Deps.immersionbar_ktx
+
+
+    kapt Deps.glide_compiler
+    kapt Androidx.room_compiler
+
+
+
+    api Tests.junit
+    api Tests.androidx_junit
+    api "junit:junit:4.13.2"
+    api Tests.espresso
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.jarvis.customerview.layout.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="open" />
+
+            <com.github.gzuliyujiang.progressbar.EnhancedProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/open"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:progress="50"
+                android:visibility="visible"
+                app:lyj_cut_corner="parallelogram"
+                app:lyj_reached_color="#00FBD0"
+                app:lyj_reached_height="10dp"
+                app:lyj_text_align="top"
+                app:lyj_text_bold="true"
+                app:lyj_text_color="#00FBD0"
+                app:lyj_text_offset="4dp"
+                app:lyj_text_size="12sp"
+                app:lyj_text_visible="true"
+                app:lyj_unreached_color="#E5E5E5"
+                app:lyj_unreached_height="8dp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+             <androidx.appcompat.widget.AppCompatSeekBar
+                 android:id="@+id/seekbar"
+                 android:layout_centerInParent="true"
+                 android:layout_width="match_parent"
+                 android:layout_height="40dp"/>
+        </RelativeLayout>
+
+    </com.jarvis.customerview.layout.DrawerLayout>
+</layout>

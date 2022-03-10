@@ -1,4 +1,18 @@
-rootProject.name = "AndroidDemosProject"
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+}
+
+
+rootProject.name = "JProjects"
+
 include ':app'
 include ':lifecycledemo'
 include ':livedatademo'
@@ -9,3 +23,8 @@ include ':customerview'
 include ':demos'
 include ':aidlclent'
 include ':aidlserver'
+include ':JLibBase'
+
+
+includeBuild(new File(settingsDir, "../JVersionManager"))
+

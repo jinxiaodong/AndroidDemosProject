@@ -1,25 +1,41 @@
-if (singleModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
-apply from: '../dependencies.gradle'
-
-
 android {
-    //form dependencies.gradle
-
+    compileSdk BuildVersion.compileSdkVersion
     defaultConfig {
-        //只有独立运行时候才需要applicationId
-        if (singleModule.toBoolean()) {
-            applicationId "com.jarvis.aidlclent"
+        applicationId "com.jarvis.aidlclent"
+        minSdk BuildVersion.minSdkVersion
+        targetSdk BuildVersion.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 }
 
 dependencies {
-    //form dependencies.gradle
-
-
+    implementation project(":JLibBase")
 }

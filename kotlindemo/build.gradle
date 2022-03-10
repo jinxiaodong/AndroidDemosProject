@@ -1,31 +1,41 @@
-if (singleModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
-apply from: '../dependencies.gradle'
-
-
 android {
-    //form dependencies.gradle
+    compileSdk BuildVersion.compileSdkVersion
 
     defaultConfig {
-        //只有独立运行时候才需要applicationId
-        if (singleModule.toBoolean()) {
-            applicationId "com.jarvis.kotlindemo"
+        minSdk BuildVersion.minSdkVersion
+        targetSdk BuildVersion.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
     }
 }
 
 dependencies {
-    //form dependencies.gradle
-
-
-    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
-    implementation "com.google.code.gson:gson:2.8.6"
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation project(":JLibBase")
 }

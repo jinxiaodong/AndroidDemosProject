@@ -4,9 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../Library/Android/sdk/platforms/android-30/data/res/layout/screen_simple.xml" value="0.39166666666666666" />
+        <entry key="../JLibrary/JLibBase/src/main/res/drawable/lib_shape_load_bg.xml" value="0.203" />
+        <entry key="../JLibrary/JLibBase/src/main/res/layout/layout_loading_view.xml" value="0.1953125" />
+        <entry key="../JLibrary/JLibBase/src/main/res/layout/layout_refresh_list.xml" value="0.1953125" />
         <entry key="aidlclent/src/main/res/layout/activity_main.xml" value="0.2733271280924479" />
         <entry key="aidlserver/src/main/res/layout/activity_main.xml" value="0.2838541666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/item_home_normal.xml" value="0.39166666666666666" />
+        <entry key="customerview/src/main/res/layout/activity_main.xml" value="0.29791666666666666" />
+        <entry key="customerview/src/main/res/layout/activity_slide.xml" value="0.29791666666666666" />
         <entry key="databindingdemo/src/main/res/layout/activity_main.xml" value="0.2765957446808511" />
         <entry key="demos/src/main/res/layout/activity_calendar_test.xml" value="0.29791666666666666" />
         <entry key="demos/src/main/res/layout/activity_main.xml" value="0.2838541666666667" />

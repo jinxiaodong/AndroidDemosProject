@@ -4,6 +4,17 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/../JVersionManager" name="JVersionManager">
+                <projects>
+                  <project path="$PROJECT_DIR$/../JVersionManager" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -11,6 +22,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/JLibBase" />
             <option value="$PROJECT_DIR$/aidlclent" />
             <option value="$PROJECT_DIR$/aidlserver" />
             <option value="$PROJECT_DIR$/app" />
@@ -20,6 +32,7 @@
             <option value="$PROJECT_DIR$/kotlindemo" />
             <option value="$PROJECT_DIR$/lifecycledemo" />
             <option value="$PROJECT_DIR$/livedatademo" />
+            <option value="$PROJECT_DIR$/../JVersionManager" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

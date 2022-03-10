@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jarvis.demos.calendar.CalendarTestActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_main_list.view.*
+import com.jarvis.demos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,9 +23,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerview.layoutManager = LinearLayoutManager(this)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding.recyclerview.layoutManager = LinearLayoutManager(this)
 
-        recyclerview.adapter = ItemAdapter(this, dataList) {
+        binding.recyclerview.adapter = ItemAdapter(this, dataList) {
             when (it) {
                 dataList[0] -> jumpToCalendarTest()
             }
@@ -63,10 +65,10 @@ class MainActivity : AppCompatActivity() {
 
         inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             fun bindViewHolder(item: String) {
-                itemView.textview.text = item
-                itemView.textview.setOnClickListener {
-                    onClick(item)
-                }
+//                itemView.textview.text = item
+//                itemView.textview.setOnClickListener {
+//                    onClick(item)
+//                }
             }
 
         }
